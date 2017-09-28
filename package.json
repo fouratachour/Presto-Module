@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "chromedriver": "^2.29.0",
-    "pdf-to-text": "0.0.6"
+    "pdf-to-text": "0.0.6",
+    "mochawesome": "^2.3.0"
   }
 }

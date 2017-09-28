@@ -3,7 +3,7 @@ var should = require('should');
 var common = require('../../common/common.webdriverio');
 
 
-describe('Allscenario', function () {
+describe('Allscenario Favicon notification module', function () {
     common.initMocha.call(this);
 
     before(function (done) {

@@ -1,0 +1,31 @@
+language: node_js
+
+
+cache:
+  directories:
+    - $HOME/.npm
+
+sudo: required
+dist: trusty
+
+matrix:
+  fast_finish: true
+
+before_script:
+  - npm install selenium-standalone@latest
+  - cd node_modules/selenium-standalone/bin/
+  - ./selenium-standalone install
+  - DISPLAY=:10 ./selenium-standalone start &> /dev/null &
+  - cd ../../..
+  - npm install
+  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_10.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :10 -ac -screen 0 1280x1024x16"
+  - sleep 15
+
+script:
+  - $TRAVIS_BUILD_DIR/node_modules/mocha/bin/mocha index.webdriverio.js -c --URL=$SHOP --EMAIL=EMAILADMIN --PWD=$PWDADMIN -t 300000 --reporter mochawesome
+  - curl http://localhost/
+
+after_script:
+  - google-chrome --version
+
+after_failure:
