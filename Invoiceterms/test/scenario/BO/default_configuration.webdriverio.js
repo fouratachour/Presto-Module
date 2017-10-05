@@ -42,20 +42,20 @@ describe('Test case n°1 = Check the default configuration', function(){
             it('should payment accept', function(done){
                 global.fctname= this.test.title;
                 this.client
-                    .pause(2000)
+                    .waitForExist(this.selector.order_state, 90000)
                     .click(this.selector.order_state)
-                    .pause(2000)
+                    .waitForExist(this.selector.payment_accepted, 90000)
                     .click(this.selector.payment_accepted)
-                    .pause(2000)
+                    .waitForExist(this.selector.valid_payment, 90000)
                     .click(this.selector.valid_payment)
                     .call(done);
             });
 
             it('should download the document', function(done){
 			    this.client
-				    .pause(2000)
+                    .waitForExist(this.selector.panel_document, 90000)
                     .click(this.selector.panel_document)
-                    .pause(2000)
+                    .waitForExist(this.selector.btn_download, 90000)
                     .click(this.selector.btn_download)
                     .pause(4000)
                     .getText(this.selector.btn_download).then(function(text) {
@@ -68,7 +68,7 @@ describe('Test case n°1 = Check the default configuration', function(){
             it('should Go to document', function(done){
 			    this.client
 				    .pause(2000)
-				    function func_verify(x){
+				    function verify(x){
 				          if(x == "-1" ){
                              done();
                         }else{
@@ -78,7 +78,7 @@ describe('Test case n°1 = Check the default configuration', function(){
                     pdfUtil.pdfToText('/home/fourat.achour/Téléchargements/'+global.documentPDF+'.pdf', function(err, data) {
                       if (err) throw(err);
                       global.TextPosition = data.indexOf('Conditions d');
-                      func_verify(global.TextPosition);
+                        verify(global.TextPosition);
                     })
 
 

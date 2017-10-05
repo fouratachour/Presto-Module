@@ -17,6 +17,55 @@ global.my_src_image2 = "";
 global.indexofterms = 0;
 module.exports = {
     selector: {
+
+
+        BO: {
+            //Back office login page selector
+            AccessPage: {
+                login_input: '#email',
+                password_input: '#passwd',
+                login_button: '[name="submitLogin"]'
+            },
+
+            //Advenced Parameter page
+            AdvancedParametersPage:{
+                menu:'//*[@id="subtab-AdminAdvancedParameters"]/a',
+                Webservice:'//*[@id="subtab-AdminWebservice"]/a',
+                WebserviceOption:{
+                    search_input:'//*[@id="form-webservice_account"]/div/div[2]/table/thead/tr[2]/th[3]/input',
+                    search_button:'//*[@id="submitFilterButtonwebservice_account"]',
+                    Upela_webservice:'//*[@id="form-webservice_account"]/div/div[2]/table/tbody/tr/td[2]'
+                }
+            },
+
+            //Common selectors
+            Common: {
+                menu: '#nav-sidebar',
+                close_validation_button: '.growl-close',
+                red_validation_notice: '[class="growl growl-error growl-medium"]',
+                green_validation_notice: '[class="growl growl-notice growl-medium"]'
+            },
+
+            //Modules page selectors
+            ModulesPage: {
+                modules_subtab: '#subtab-AdminParentModulesSf',
+                search_input: 'div.pstaggerAddTagWrapper > input',
+                search_button: '.btn.btn-primary.pull-right.search-button',
+                page_loaded: '.module-search-result-wording',
+                installed_modules_tabs: '(//div[@class="page-head-tabs"]/a)[2]',
+                module_number_span: '[class="module-sorting-search-wording"]',
+                number_of_module_found:'//*[@id="main-div"]/div[3]/div/div/div[2]/div/div[7]/span[1]',
+                configuration_button:'//*[@id="modules-list-container-all"]/div[1]/div/div/div[5]/div[2]/form/button',
+                module_tech_name: '//div[@data-tech-name="' + module_tech_name + '" and not(@style)]',
+                install_module_button: '//div[@data-tech-name="' + module_tech_name + '" and not(@style)]//button[@data-confirm_modal="module-modal-confirm-' + module_tech_name + '-install"]',
+                uninstall_module_list: '//div[@data-tech-name="' + module_tech_name + '" and not(@style)]//button[@class="btn btn-primary-outline  dropdown-toggle"]',
+                uninstall_module_button: '//div[@data-tech-name="' + module_tech_name + '" and not(@style)]//button[@class="dropdown-item module_action_menu_uninstall"]',
+                modal_confirm_uninstall: '//*[@id="module-modal-confirm-' + module_tech_name + '-uninstall" and @class="modal modal-vcenter fade in"]//a[@class="btn btn-primary uppercase module_action_modal_uninstall"]',
+                module_menu_button: '[class="btn btn-primary-outline  dropdown-toggle"]',
+                enable_module_button: '[class="dropdown-item module_action_menu_enable"]'
+            }
+        },
+        ModuleInvoiceterms:'//*[@id="modules-list-container-all"]/div/div/div/div[5]/div[2]/form/button',
 	//Installation
 	    language:'//*[@id="langList"]',
 	    next_step:'//*[@id="btNext"]',
@@ -123,7 +172,7 @@ module.exports = {
 		logoutFO: '.logout',
 		//create_account: '#email_create',
 		home_logo_url:'//*[@id="_desktop_logo"]/a',
-		First_product:'//*[@id="content"]/section/div[2]/div/div/article[6]/div/a',
+		First_product:'//*[@id="content"]/section/div/article/div/a',
 		add_to_cart_lifestyle:'//*[@id="add-to-cart-or-refresh"]/div[2]/div[1]/div[2]/button',
         valid_cart_lifestyle:'//*[@id="blockcart-modal"]/div/div/div[2]/div/div[2]/div/div/a',
 		create_account_button: '[data-link-action="display-register-form"]',
@@ -150,7 +199,7 @@ module.exports = {
 		//command_product_quantity: '//div[@class="product-line-grid-body col-md-5 col-xs-5"]/div[5]',
 		command_product_name: '(//div[@class="product-line-info"])[1]/a',
 		command_product_price: '(//div[@class="product-line-info"])[2]/span',
-		command_button_checkout: '//*[@id="main"]/div/div[2]/div[1]/div[2]/div/a',
+		command_button_checkout: '//*[@id="main"]/div/div[2]/div[1]/div[3]/div/a',
 		check_out_step1: '#checkout-personal-information-step',
 		check_out_step2: '#checkout-addresses-step',
         checkout_step2_continue_button:'//*[@id="checkout-addresses-step"]/div/div/form/div[2]/button',
@@ -159,7 +208,7 @@ module.exports = {
 		check_out_step4: '#checkout-payment-step',
 		checkout_step4_payment: '//*[@id="payment-option-2"]',
 		checkout_step4_cgv: '//input[@id="conditions_to_approve[terms-and-conditions]"]',
-		checkout_step4_order: '#payment-confirmation >div > button',
+		checkout_step4_order: '//*[@id="payment-confirmation"]/div[1]/button',
 		checkout_total: '//div[@class="cart-summary-line cart-total"]/span[2]',
 		order_confirmation_name: '#order-items > div > div > div.col-sm-4.col-xs-9.details > span',
 		order_confirmation_price1: '#order-items > div > table > tbody > tr:nth-child(1) > td:nth-child(2)',
@@ -170,8 +219,7 @@ module.exports = {
 		search_product_result_image: '.thumbnail.product-thumbnail',
 		search_product_result_name: '//*[@id="js-product-list"]/div[1]/article[1]/div/div[1]/h1/a',
 		search_product_result_price: '[itemprop="price"]',
-		close_error:'//*[@id="error-modal"]/div/div/button',
-
+		close_error:'//*[@id="error-modal"]/div/div/button'
 	},
     shouldExist: function(err, existing) {
         should(err).be.not.defined;

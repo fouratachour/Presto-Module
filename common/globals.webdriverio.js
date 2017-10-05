@@ -175,7 +175,7 @@ module.exports = {
                 command_button_checkout: '//*[@id="main"]/div/div[2]/div[1]/div[3]/div/a',
                 checkout_step2_continue_button:'//*[@id="checkout-addresses-step"]/div/div/form/div[2]/button',
                 checkout_step3_continue_button: '//*[@id="js-delivery"]/button',
-                checkout_step4_payment: '//*[@id="payment-option-2"]',
+                checkout_step4_payment: '//*[@id="delivery_option_1"]',
                 checkout_step4_cgv: '//input[@id="conditions_to_approve[terms-and-conditions]"]',
                 checkout_step4_order_button: '#payment-confirmation >div > button',
                 order_confirmation_text:'#content-hook_order_confirmation > div > div > div > h3 > i'

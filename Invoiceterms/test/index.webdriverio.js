@@ -18,20 +18,20 @@ describe('Allscenario', function(){
 	});
 
     // Test case n°1 = Check the default configuration
-	 require('./scenario/FO/buy_product.webdriverio');
+
+	 require('./scenario/BO/disable_module.webdriverio');
+     require('./scenario/FO/buy_product.webdriverio');
 	 require('./scenario/BO/default_configuration.webdriverio');
 
-
     // Test case n°2 = Check the added configuration
-	  require('./scenario/FO/buy_product.webdriverio');
-	  require('./scenario/BO/invoiceterms_default.webdriverio');
+     require('./scenario/BO/enable_module.webdriverio')
+     require('./scenario/FO/buy_product.webdriverio');
+	 require('./scenario/BO/invoiceterms_default.webdriverio');
 
     // Test case n°3 = Modify terms and conditions of use
-      require('./scenario/FO/buy_product.webdriverio');
-	  require('./scenario/BO/edit_invoiceterms.webdriverio');
-
-      require('./scenario/FO/buy_product.webdriverio');
-	  require('./scenario/BO/check_edited_invoiceterms.webdriverio');
+	 require('./scenario/BO/edit_invoiceterms.webdriverio');
+	 require('./scenario/FO/buy_product.webdriverio');
+	 require('./scenario/BO/check_edited_invoiceterms.webdriverio');
 
 
 });
