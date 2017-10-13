@@ -28,7 +28,7 @@ b)	How to launch tests
 -	Go to the folder of the module you want to test and execute the following line:
 - Launch tests :
 
-      mocha index.webdriverio.js --URL=presto200917.staging-prestashopready.net --EMAIL=remi.gaillard@prestashop.com --PWD=abcd1234
+      mocha launch-seoimage-module-tests.js --URL=presto200917.staging-prestashopready.net --EMAIL=remi.gaillard@prestashop.com --PWD=abcd1234
 -	URL: Front office URL of your prestashop website (without the “http://”)
 -	Email  : Admin email
 -	PWD : Admin password

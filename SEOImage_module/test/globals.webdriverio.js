@@ -19,9 +19,9 @@ module.exports = {
 	 BO: {
 	     //Back office login page selectors
 	     LoginPage: {
-             login: '#email',
-             password: '#passwd',
-             login_btn: '[name="submitLogin"]',
+             login_input: '#email',
+             password_input: '#passwd',
+             login_button: '[name="submitLogin"]',
          },
 
          //Common selectors
@@ -31,69 +31,54 @@ module.exports = {
 
          //Module page selectors
          ModulePage: {
-             modules_menu: '#subtab-AdminParentModulesSf',
-             installed_moule_page: '//*[@id="main-div"]/div[1]/div[2]/a[2]',
-             modules_page_loaded: '.module-search-result-wording',
-             modules_search: '.pstaggerAddTagInput.module-tags-input',
+             modules_subtub: '#subtab-AdminParentModulesSf',
+             installed_moule_tabs: '(//div[@class="page-head-tabs"]/a)[2]',
+             modules_search_results: '.module-search-result-wording',
+             modules_search_input: '.pstaggerAddTagInput.module-tags-input',
              modules_search_button: '//*[@id="main-div"]/div[3]/div[2]/div/div[2]/div/div[5]/div/div[1]/div/button',
-             module_configuration_btn: '//*[@id="modules-list-container-all"]/div[1]/div/div/div[5]/div[2]/form/button',
-             nbr_module: '//*[@id="main-div"]/div[3]/div[2]/div/div[2]/div/div[7]/span[1]',
+             module_configuration_button: '//*[@id="modules-list-container-all"]/div[1]/div/div/div[5]/div[2]/form/button',
+             module_number_span: '//*[@id="main-div"]/div[3]/div[2]/div/div[2]/div/div[7]/span[1]',
          },
 
          //Module page configuration selectors
          ModuleConfiguration: {
-             seo_config_panel: '//*[@id="modulecontent"]/div[1]/div[1]/a[2]',
-             add_rules_btn: '.process-icon-new',
-             rule_name: '//*[@id="rule_name"]',
-             rule_lang_btn: '//*[@id="step-1"]/div[3]/div/div[1]/button',
-             rule_english_lang: '//*[@id="step-1"]/div[3]/div/div[1]/div/ul/li[1]',
-             rule_french_lang: '//*[@id="step-1"]/div[3]/div/div[1]/div/ul/li[2]',
-             next_step_rules: '//*[@id="next-step"]',
-             all_catalog_btn_rules: '//*[@id="radios-0"]/label/input',
-             rules_condition: '//*[@id="legend"]',
-             save_rules: '//*[@id="btn-save"]',
-             close_green_validation: '/html/body/div[6]/div/div/div[1]/div/div[2]/button',
-             apply_rule1_btn: '//*[@id="table-metas-1"]/tbody/tr/td[7]/div/div/a',
-             apply_rule2_btn: '//*[@id="table-metas-1"]/tbody/tr[2]/td[7]/div/div/a',
-             apply_rule3_btn: '//*[@id="table-metas-1"]/tbody/tr[3]/td[7]/div/div/a',
-             apply_rule4_btn: '//*[@id="table-metas-1"]/tbody/tr[4]/td[7]/div/div/a',
-             apply_all_rules: '//*[@id="table-metas-1"]/a[1]',
-             dropdownlist_btn: '//*[@id="table-metas-1"]/tbody/tr[1]/td[7]/div/div/button',
-             edit_rule_btn: '//*[@id="table-metas-1"]/tbody/tr[1]/td[7]/div/div/ul/li[1]/a',
-             expan_all_btn: '//*[@id="expandall"]',
-             evening_dress_checkbox: '//*[@id="category_10"]/a/i[1]',
+             optimize_images_tab: '//*[@id="modulecontent"]/div[1]/div[1]/a[2]',
+             add_new_rule_button: '.process-icon-new',
+             rule_name_input: '//*[@id="rule_name"]',
+             ruleLanguage_dropdownlist: '//*[@id="step-1"]/div[3]/div/div[1]/button',
+             ruleLanguage_select: '//*[@id="step-1"]/div[3]/div/div[1]/div/ul/li[%s]',
+             next_step_rule_button: '//*[@id="next-step"]',
+             all_category_radio_button: '//*[@id="radios-0"]/label/input',
+             legend_input: '//*[@id="legend"]',
+             save_rule_button: '//*[@id="btn-save"]',
+             green_validation_notice: '/html/body/div[6]/div/div/div[1]/div/div[2]/button',
+             apply_rule_button: '//*[@id="table-metas-1"]/tbody/tr[%s]/td[7]/div/div/a',
+             apply_second_rule_button: '//*[@id="table-metas-1"]/tbody/tr[2]/td[7]/div/div/a',
+             apply_all_rules_button: '//*[@id="table-metas-1"]/a[1]',
+             dropdown_button: '//*[@id="table-metas-1"]/tbody/tr[1]/td[7]/div/div/button',
+             edit_rule_button: '//*[@id="table-metas-1"]/tbody/tr[1]/td[7]/div/div/ul/li[1]/a',
+             expan_all_button: '//*[@id="expandall"]',
+             evening_dresses_checkbox: '//*[@id="category_10"]/a/i[1]',
          },
      },
         FO : {
 	        //Common selectors
             Common: {
-                lang_btn: '//*[@id="_desktop_language_selector"]/div/div/button',
-                english_btn: '//*[@id="_desktop_language_selector"]/div/div/ul/li[1]/a',
-                french_btn: '//*[@id="_desktop_language_selector"]/div/div/ul/li[2]/a',
+                language_button: '//*[@id="_desktop_language_selector"]/div/div/button',
+                chooseLanguage_button: '//*[@id="_desktop_language_selector"]/div/div/ul/li[%s]/a',
             },
 
             //Home page selectors
             HomePage: {
-                access_loginFO: 'div.user-info > a',
-                loginFO: '//*[@id="login-form"]/section/div[1]/div[1]/input',
-                passwordFO: '//*[@id="login-form"]/section/div[2]/div[1]/div/input',
-                login_btnFO: '//*[@id="login-form"]/footer/button',
-                logoutFO: '.logout',
-                logo_home_pageFO: '.logo.img-responsive',
-                all_product: '//*[@id="content"]/section/a',
-            },
-
-            //Category page selectors
-            CategoryPage: {
-                first_product: '//*[@id="js-product-list"]/div[1]/article[1]/div/a/img',
-                category_list: '//*[@id="left-column"]/div[1]/ul/li[2]/ul/li/div[1]',
-                category_women_list: '//*[@id="left-column"]/div[1]/ul/li[2]/ul/li/div[1]/i[1]',
-                tops_category: '//*[@id="left-column"]/div[1]/ul/li[2]/ul/li[1]/a',
-                dresses_category: '//*[@id="left-column"]/div[1]/ul/li[2]/ul/li[2]/a',
-                dresses_category_list: '//*[@id="exCollapsingNavbar3"]/ul/li[2]/span/i[1]',
-                evening_dresses_category: '//*[@id="exCollapsingNavbar8"]/ul/li[2]/a',
-                casual_dresses_category: '//*[@id="exCollapsingNavbar8"]/ul/li[1]/a',
-                dresses_list: '//*[@id="left-column"]/div[1]/ul/li[2]/ul/li[2]/div[1]/i[1]',
+                access_login_button: 'div.user-info > a',
+                login_input: '//*[@id="login-form"]/section/div[1]/div[1]/input',
+                password_input: '//*[@id="login-form"]/section/div[2]/div[1]/div/input',
+                login_button: '//*[@id="login-form"]/footer/button',
+                logout_button: '.logout',
+                logo_home_page: '//*[@id="_desktop_logo"]/a/img',
+                sleeves_tshirt_image: '//*[@id="content"]/section/div/article[1]/div/a/img',
+                printed_dress_casual_dresses_category_image: '//*[@id="content"]/section/div/article[3]/div/a/img',
+                printed_dress_evening_dresses_category_image: '//*[@id="content"]/section/div/article[4]/div/a/img',
             },
 
             //Product page selectors
@@ -103,7 +88,7 @@ module.exports = {
                 product_image: '//*[@id="product-modal"]/div/div/div/figure/img',
                 thumbnail_image: '//*[@id="content"]/div[1]/div[2]/ul/li[1]/img',
                 category_name: '//*[@id="wrapper"]/div/nav/ol/li[4]/a/span',
-                women_category: '//*[@id="wrapper"]/div/nav/ol/li[2]/a',
+                women_category_select: '//*[@id="wrapper"]/div/nav/ol/li[2]/a',
             },
         }
 

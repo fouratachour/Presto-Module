@@ -18,7 +18,7 @@ describe('The Activation of the Favicon Notification Module', function () {
 
 
     describe('Log in in Back Office', function (done) {
-        it('should log in successfully in BO', function (done) {
+        it('should log in successfully in actionbloc', function (done) {
             this.client
                 .signinBO()
                 .waitForExist(this.selector.BO.Common.menu, 90000)
@@ -72,7 +72,7 @@ describe('The Activation of the Favicon Notification Module', function () {
     });
 
     describe('Log out in Back Office', function (done) {
-        it('should log out successfully in BO', function (done) {
+        it('should log out successfully in actionbloc', function (done) {
             this.client
                 .signoutBO()
                 .call(done);

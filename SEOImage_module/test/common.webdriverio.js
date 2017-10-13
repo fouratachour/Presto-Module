@@ -39,10 +39,10 @@ function initCommands(client) {
         this.selector = globals.selector;
         client
             .url('http://' + URL + '/admin-dev/')
-            .waitForExist(this.selector.BO.LoginPage.login, 90000)
-            .setValue(this.selector.BO.LoginPage.login, 'demo@prestashop.com')
-            .setValue(this.selector.BO.LoginPage.password, 'prestashop_demo')
-            .click(this.selector.BO.LoginPage.login_btn)
+            .waitForExist(this.selector.BO.LoginPage.login_input, 90000)
+            .setValue(this.selector.BO.LoginPage.login_input, 'demo@prestashop.com')
+            .setValue(this.selector.BO.LoginPage.password_input, 'prestashop_demo')
+            .click(this.selector.BO.LoginPage.login_button)
             .waitForExist(this.selector.BO.Common.menu, 90000)
             .call(cb);
     });
@@ -51,12 +51,13 @@ function initCommands(client) {
         this.selector = globals.selector;
         client
             .url('http://' + URL)
-            .waitForExist(this.selector.FO.HomePage.access_loginFO, 90000)
-            .click(this.selector.FO.HomePage.access_loginFO)
-            .waitForExist(this.selector.FO.HomePage.loginFO, 90000)
-            .setValue(this.selector.FO.HomePage.loginFO, 'pub@prestashop.com')
-            .setValue(this.selector.FO.HomePage.passwordFO, '123456789')
-            .click(this.selector.FO.HomePage.login_btnFO)
+            .waitForExist(this.selector.FO.HomePage.access_login_button, 90000)
+            .click(this.selector.FO.HomePage.access_login_button)
+            .waitForExist(this.selector.FO.HomePage.login_input, 90000)
+            .setValue(this.selector.FO.HomePage.login_input, 'pub@prestashop.com')
+            .setValue(this.selector.FO.HomePage.password_input, '123456789')
+            .click(this.selector.FO.HomePage.login_button)
+            .waitForExist(this.selector.FO.HomePage.logo_home_page)
             .call(cb);
     });
 
@@ -78,30 +79,6 @@ function initCommands(client) {
         this.selector = globals.selector;
         client
             .deleteCookie()
-            .call(cb);
-    });
-
-    client.addCommand('changeENlanguageFO', function (cb) {
-        this.selector = globals.selector;
-        client
-            .pause(6000)
-            .waitForExist(this.selector.FO.Common.lang_btn, 90000)
-            .click(this.selector.FO.Common.lang_btn)
-            .pause(3000)
-            .waitForExist(this.selector.FO.Common.english_btn, 90000)
-            .click(this.selector.FO.Common.english_btn)
-            .call(cb);
-    });
-
-    client.addCommand('changeFRlanguageFO', function (cb) {
-        this.selector = globals.selector;
-        client
-            .pause(6000)
-            .waitForExist(this.selector.FO.Common.lang_btn, 90000)
-            .click(this.selector.FO.Common.lang_btn)
-            .pause(3000)
-            .click(this.selector.FO.Common.french_btn)
-            .pause(3000)
             .call(cb);
     });
 
@@ -156,9 +133,9 @@ module.exports = {
     after: function (done) {
             done();
     },
-    take_screenshot: function (done) {
+    /*take_screenshot: function (done) {
         client.saveScreenshot(__dirname +'/screenshots/' + client.desiredCapabilities.browserName + '-Exception' + '_' + global.fctname + '.png');
-    },
+    },*/
     initMocha: function () {
         this.timeout(900000000);
         this.slow(45000);
