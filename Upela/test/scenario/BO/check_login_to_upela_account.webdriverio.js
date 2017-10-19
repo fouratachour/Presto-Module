@@ -14,7 +14,7 @@ describe('Test case n°2 = check upela account connection', function () {
     after(common.after);
 
     describe('Log in in Back Office', function (done) {
-        it('should log in successfully in BO', function (done) {
+        it('should log in successfully in actionbloc', function (done) {
             this.client
                 .url('http://' + URL + '/backoffice/')
                 .waitForExist(this.selector.BO.Common.menu, 90000)

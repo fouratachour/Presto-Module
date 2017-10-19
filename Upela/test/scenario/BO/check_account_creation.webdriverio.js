@@ -14,7 +14,7 @@ describe('Test case n°1 = check account creation', function () {
     after(common.after);
 
     describe('Log in in Back Office', function (done) {
-        it('should log in successfully in BO', function (done) {
+        it('should log in successfully in actionbloc', function (done) {
             this.client
                 .signinBO()
                 .waitForExist(this.selector.BO.Common.menu, 90000)
