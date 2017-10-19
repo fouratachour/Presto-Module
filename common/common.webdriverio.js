@@ -34,7 +34,7 @@ function initCommands(client) {
         client
             .url('http://' + URL + '/backoffice/')
             .waitForExist(this.selector.BO.AccessPage.login_input, 90000)
-            .setValue(this.selector.BO.AccessPage.login_input, email)
+            .setValue(this.selector.BO.AccessPage.login_input,email)
             .setValue(this.selector.BO.AccessPage.password_input, password)
             .click(this.selector.BO.AccessPage.login_button)
             .waitForExist(this.selector.BO.Common.menu, 90000)
@@ -77,12 +77,12 @@ module.exports = {
                 client = webdriverio
                     .remote(options2)
                     .init()
-                    .windowHandleSize({width: 1280, height: 1024});
+                    .windowHandleSize({width: 1600, height: 1050});
             } else {
                 client = webdriverio
                     .remote(options)
                     .init()
-                    .windowHandleSize({width: 1280, height: 1024});
+                    .windowHandleSize({width: 1600, height: 1050});
             }
             initCommands(client);
 
